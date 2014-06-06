@@ -35,7 +35,7 @@ setup(
     author_email='rafael@pivato.info',
     license='MIT',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 1 - Planning',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',

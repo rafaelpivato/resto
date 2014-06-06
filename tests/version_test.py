@@ -4,7 +4,7 @@ import resto
 from pkg_resources import parse_version
 
 
-class TestVersion(unittest.TestCase):
+class VersionTestCase(unittest.TestCase):
     """Checks package `__version__` access."""
 
     def test_version_access(self):

@@ -5,11 +5,12 @@ import re
 
 here = os.path.abspath(os.path.dirname(__file__))
 
+
 # Read the version number from a source file.
 def find_version(*file_paths):
     pathname = os.path.join(here, *file_paths)
-    with io.open(pathname, mode='r', encoding='latin1') as f:
-        version_file = f.read()
+    with io.open(pathname, mode='r', encoding='latin1') as verf:
+        version_file = verf.read()
     version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
                               version_file, re.MULTILINE)
     print version_file
@@ -21,8 +22,8 @@ def find_version(*file_paths):
 # Get the long description from the relevant file
 description = "Python Microframework for REST endpoints"
 long_description = description
-with io.open('DESCRIPTION.rst', encoding='utf-8') as f:
-    long_description = f.read()
+with io.open('DESCRIPTION.rst', encoding='utf-8') as descf:
+    long_description = descf.read()
 
 setup(
     name="resto",

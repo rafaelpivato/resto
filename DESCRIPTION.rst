@@ -25,6 +25,8 @@ useful framework for companies and start ups willing to increase their
 development speed by enforcing some  minimum quality at their Web REST
 back-ends.
 
+Some documentation can also be seen at `Read The Docs`_.
 
+.. _Read The Docs: http://resto.readthedocs.org/en/latest/
 .. _iron triangle idea: http://tcrn.ch/1fch6T9
 .. _Roy Fielding: http://bit.ly/1g9MhBI

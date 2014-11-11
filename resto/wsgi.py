@@ -8,6 +8,25 @@ resto object and resources.
 from wsgiref.simple_server import make_server
 
 
+class Application(object):
+    """Resto applications are used to control your workspace.
+
+    Main motivation behind having this class was having an entry point
+    for resource discovery and resolution. With an Application object
+    we can indicate where to find resources.
+
+    """
+
+    def __init__(self, root):
+        """Initializes indicating root Python module.
+
+        The application will look for all `Resource` classes defined
+        in the given root module.
+
+        """
+        self._root = root
+
+
 class Middleware(object):
     """WSGI middleware that will route to resources."""
 

@@ -21,6 +21,7 @@ class AppTestCase(unittest.TestCase):
         for data in result:
             content += data
         self.assertGreater(content, '')
+        self.assertTrue(self.mock_start.called)
 
 
 if __name__ == '__main__':

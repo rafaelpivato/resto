@@ -7,6 +7,8 @@ resto object and resources.
 
 from wsgiref.simple_server import make_server
 
+from resto import Resource
+
 
 class Application(object):
     """Resto applications are used to control your workspace.
@@ -25,6 +27,23 @@ class Application(object):
 
         """
         self._root = root
+        if not self.get_resources():
+            raise Exception('Your application has no Resource.')
+
+    def __call__(self, environ, start_response):
+        """Starts WSGI application flow."""
+        middleware = Middleware(environ, start_response)
+        middleware.application = self
+        return middleware
+
+    def get_resources(self):
+        """Enumerate resources classes."""
+        resources = []
+        for name in dir(self._root):
+            attr = getattr(self._root, name)
+            if isinstance(attr, type) and issubclass(attr, Resource):
+                resources.append(attr)
+        return resources
 
 
 class Middleware(object):
